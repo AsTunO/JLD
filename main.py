@@ -6,9 +6,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-
 
 SAMPLE_SPREADSHEET_ID = "1eXmppSMg46hkNmqpcVDQ7XQAKR5JGMR3a4ioczjnryE"
 SAMPLE_RANGE_NAME = "Pagamentos 2023!B:K"
@@ -36,15 +34,29 @@ def main():
             .execute()
         )
         values = result.get("values", [])
+
         if not values:
             print("No data found.")
             return
-        print("Retrieved data:")
-        for row in values:
-            print(row)
+
+        # A primeira linha contém os cabeçalhos
+        headers = values[1]
+        data_rows = values[2:]
+
+        # Lista de dicionários
+        dados = []
+        for row in data_rows:
+            # Cria um dicionário associando cada valor à sua coluna correspondente
+            row_dict = {headers[i]: row[i] if i < len(row) else '' for i in range(len(headers))}
+            dados.append(row_dict)
+
+        # Exibindo o resultado
+        print("Dados estruturados:")
+        for dado in dados:
+            print(dado)
+
     except HttpError as err:
         print(err)
+
 if __name__ == "__main__":
     main()
-
-#teste
