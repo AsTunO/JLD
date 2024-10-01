@@ -1,0 +1,114 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("/img/bgPd.jpeg");
+    background-size: cover;
+    
+}
+
+
+#cabeca{
+    text-align: center;
+}
+
+#busca{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+#lupa{
+    width: 35px;
+    height: 35px;
+}
+
+#pesquisa{
+    width: 10px;
+    height: 10px;
+    background: none;
+}
+
+input[type="text"]{
+    padding: 10px;
+    border: 1px solid #aebae3;
+    border-radius: 20px;
+    outline: none;
+    width: 250px;
+}
+#op{
+    display: flex;
+    justify-content: center;
+    gap:90px;
+    padding: 20px;
+}
+
+button{
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.botao:hover{
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+#cow{
+    background-color: #eb3b5a;
+    box-shadow: 0 5px 6px rgba(232, 6, 6, 0.4);
+}
+
+#emp{
+    background-color: #3867d6;
+    box-shadow: 0 5px 6px rgba(81, 6, 232, 0.4);
+}
+
+#parc{
+    background-color: #20be6b;
+    box-shadow: 0 5px 6px rgba(1, 111, 54, 0.4);
+}
+
+#result{
+    background-color: aliceblue;
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: rgb(167, 248, 248);
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 15px;
+    
+}
+
+.link{
+    text-align: center;
+    display:block
+}
+
+input[type="submit"]{
+    padding: 9px 15px;
+    background-color: #3867d6;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    color: aliceblue;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover{
+    background-color: #20be6b;
+}
+
+.rodape p{
+    
+    text-align: center;
+    font-size: smaller;
+}
